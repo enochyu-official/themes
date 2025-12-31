@@ -3,7 +3,7 @@ license = "MIT"
 licenselink = "https://github.com/enochyu-official/EnochBlogTheme/blob/master/LICENSE"
 description = "A Hugo blog theme with glassmorphism and Bootstrap"
 homepage = "https://github.com/enochyu-official/EnochBlogTheme"
-# demosite = ""
+demosite = "https://enochyu-official.github.io/blog/"
 
 tags = ["blog", "glassmorphism", "bootstrap", "responsive", "minimal" ]
 features = [
@@ -17,4 +17,4 @@ features = [
 
 [author]
 name = "Enoch Yu"
-# homepage = ""
+homepage = "https://enochyu-official.github.io/blog/"
