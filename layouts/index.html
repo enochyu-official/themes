@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="container">
+  {{ partial "profile.html" . }}
+  {{ partial "stats.html" . }}
+
+  <div class="articles-section">
+    <h2 class="section-title">Latest Posts</h2>
+    <div class="row">
+      {{ range first 10 (where .Site.RegularPages "Type" "posts") }}
+      {{ partial "article-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

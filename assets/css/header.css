@@ -1,0 +1,43 @@
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
+
+.navbar {
+  border-radius: 0 !important;
+  padding: 15px 30px;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: inherit !important;
+}
+
+.nav-link {
+  color: inherit !important;
+  margin: 0 15px;
+  transition: opacity 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+  opacity: 0.7;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: inherit;
+  padding: 8px 12px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
+

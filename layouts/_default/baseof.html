@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  {{ partial "header.html" . }}
+    
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+    
+  {{ partial "footer.html" . }}
+    
+  {{ $js := resources.Get "js/script.js" }}
+  <script src="{{ $js.Permalink }}"></script>
+  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

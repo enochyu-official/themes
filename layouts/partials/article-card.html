@@ -1,0 +1,40 @@
+<div class="col-12">
+  <div class="article-card glass">
+
+    <div class="article-meta">
+      <i class="far fa-calendar"></i> {{ .Date.Format "January 2, 2006" }}
+      <span class="mx-2">•</span>
+      <i class="far fa-clock"></i> {{ .ReadingTime }} min read
+      <span class="mx-2">•</span>
+      <i class="far fa-file-text"></i> {{ .WordCount }} words
+      <span class="mx-2">•</span>
+      <i class="far fa-eye"></i> Loading... views
+
+      {{ with .Params.categories }} 
+      <span class="mx-2">•</span>
+      <i class="fas fa-folder"></i> 
+      {{ range first 1 . }}
+        <a href="{{ "categories" | relURL }}/{{ . | urlize }}/">{{ . }}</a>
+      {{ end }}
+      {{ end }}
+    </div>
+
+    <a href="{{ .Permalink }}" class="article-title d-block">{{ .Title }}</a>
+      <p class="article-excerpt">
+        {{ if .Description }}
+          {{ .Description }}
+        {{ else }}
+          {{ .Summary }}
+        {{ end }}
+      </p>
+
+      {{ with .Params.tags }}
+      <div class="article-tags">
+        {{ range . }}
+        <a href="{{ "tags" | relURL }}/{{ . | urlize }}/" class="tag">{{ . }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+  </div>
+</div>
+

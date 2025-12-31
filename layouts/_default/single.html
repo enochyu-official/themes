@@ -1,0 +1,60 @@
+{{ define "main" }}
+<div class="container">
+  <div class="post-container">
+    <article class="post-content glass">
+      <h1 class="post-title">{{ .Title }}</h1>
+      <div class="post-meta">
+        <i class="far fa-calendar"></i> {{ .Date.Format "January 2, 2006" }}
+        <span class="mx-2">•</span>
+        <i class="far fa-clock"></i> {{ .ReadingTime }} min read
+        <span class="mx-2">•</span>
+        <i class="far fa-file-text"></i> {{ .WordCount }} words
+        <span class="mx-2">•</span>
+        <i class="far fa-eye"></i> Loading... views
+
+        {{ with .Params.categories }} 
+        <span class="mx-2">•</span>
+        <i class="fas fa-folder"></i> 
+        {{ range first 1 . }}
+        <a href="{{ "categories" | relURL }}/{{ . | urlize }}/">{{ . }}</a>
+        {{ end }}
+        {{ end }}
+      </div>
+
+      <div class="post-body">
+        {{ .Content }}
+      </div>
+      {{ with .Params.tags }}
+      <div class="post-tags mt-4">
+        <strong>Tags:</strong>
+        {{ range . }}
+        <a href="{{ "tags" | relURL }}/{{ . | urlize }}/" class="tag">{{ . }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+    </article>
+        {{ partial "toc.html" . }}
+    </div>
+
+    <nav class="post-navigation glass">
+      <div class="nav-buttons">
+        {{ with .PrevInSection }}
+        <a href="{{ .Permalink }}" class="nav-button">
+          <div class="nav-label"><i class="fas fa-arrow-left"></i> Previous</div>
+          <div class="nav-title">{{ .Title }}</div>
+        </a>
+        {{ else }}
+        <div></div>
+        {{ end }}
+
+        {{ with .NextInSection }}
+        <a href="{{ .Permalink }}" class="nav-button text-end">
+          <div class="nav-label">Next <i class="fas fa-arrow-right"></i></div>
+          <div class="nav-title">{{ .Title }}</div>
+        </a>
+        {{ end }}
+      </div>
+    </nav>
+</div>
+{{ end }}
+

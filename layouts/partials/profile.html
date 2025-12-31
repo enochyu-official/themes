@@ -1,0 +1,33 @@
+<div class="profile-section glass">
+  {{ $img := resources.Get .Site.Params.avatar }}
+  <img src="{{ $img.RelPermalink }}" alt="avatar" class="avatar">
+  <h1 class="profile-name">{{ .Site.Params.author }}</h1>
+  <p class="profile-description">{{ .Site.Params.description }}</p>
+
+  <div class="social-icons">
+    {{ with .Site.Params.social.github }}
+    <a href="{{ . }}" target="_blank" rel="noopener" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    {{ end }}
+
+    {{ with .Site.Params.social.youtube }}
+    <a href="{{ . }}" target="_blank" rel="noopener" aria-label="Youtube">
+      <i class="fab fa-youtube"></i>
+    </a>
+    {{ end }}
+
+    {{ with .Site.Params.social.linkedin }}
+    <a href="{{ . }}" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    {{ end }}
+
+    {{ with .Site.Params.social.email }}
+    <a href="{{ . }}" aria-label="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    {{ end }}
+  </div>
+</div>
+

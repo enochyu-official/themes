@@ -1,0 +1,40 @@
+baseURL = 'https://example.com/'
+languageCode = 'en-US'
+title = 'My Blog'
+
+[params]
+  author = "Enoch Yu"
+  avatar = "/images/avatar.png"
+  mainSections = ["posts"]
+  favicon = "favicon.ico"
+
+[params.article]
+  math = true
+
+[params.social]
+  github = "github.com"
+  youtube = "youtube.com"
+  linkedin = "linkedin.com"
+  email = "your@email.com"
+
+[params.comments]
+  enabled = true
+  provider = "giscus"
+
+[taxonomies]
+  category = "categories"
+  tag      = "tags"
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
+  [markup.highlight]
+    style = "monokai"
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = '0.146.0'
+

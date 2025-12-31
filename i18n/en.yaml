@@ -1,0 +1,40 @@
+# Translation file for English
+- id: readMore
+  translation: "Read More"
+
+- id: readingTime
+  translation: "{{ .Count }} min read"
+
+- id: tableOfContents
+  translation: "Table of Contents"
+
+- id: categories
+  translation: "Categories"
+
+- id: tags
+  translation: "Tags"
+
+- id: postedOn
+  translation: "Posted on"
+
+- id: lastModified
+  translation: "Last modified"
+
+- id: previous
+  translation: "Previous"
+
+- id: next
+  translation: "Next"
+
+- id: allPosts
+  translation: "All Posts"
+
+- id: notFound
+  translation: "Page Not Found"
+
+- id: notFoundDesc
+  translation: "The page you are looking for does not exist."
+
+- id: goHome
+  translation: "Go Home"
+
