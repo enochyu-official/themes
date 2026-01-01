@@ -52,6 +52,10 @@
   color: inherit;
 }
 
+body.dark-mode .article-title {
+  color: #E9DCC9;
+}
+
 .article-excerpt {
   font-size: 16px;
   line-height: 1.6;

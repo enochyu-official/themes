@@ -12,7 +12,12 @@
 .post-title {
   font-size: 36px;
   font-weight: bold;
+  color: #0F0E47;
   margin-bottom: 20px;
+}
+
+body.dark-mode .post-title {
+  color: #E9DCC9;
 }
 
 .post-meta {
@@ -45,12 +50,24 @@ body.dark-mode .post-meta {
   margin-top: 30px;
   margin-bottom: 15px;
   font-size: 28px;
+  color: #1B1B1B;
+  font-weight: bold;
+}
+
+body.dark-mode .post-body h2 {
+  color: #FFDEAD;
 }
 
 .post-body h3 {
   margin-top: 25px;
   margin-bottom: 12px;
   font-size: 22px;
+  color: #36454F;
+  font-weight: 600;
+}
+
+body.dark-mode .post-body h3 {
+  color: #FCF5E5;
 }
 
 .post-body p {
