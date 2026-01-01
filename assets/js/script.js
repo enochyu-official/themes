@@ -84,7 +84,30 @@ const currentPath = window.location.pathname;
 const links = document.querySelectorAll('.nav-link');
 
 links.forEach(link => {
-    if (link.getAttribute('href') === currentPath) {
-        link.classList.add('active');
-    }
+  if (link.getAttribute('href') === currentPath) {
+    link.classList.add('active');
+  }
 });
+
+(function() {
+  function syncGiscus() {
+    const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (iframe) {
+      iframe.contentWindow.postMessage(
+        { giscus: { setConfig: { theme: theme } } },
+        'https://giscus.app'
+      );
+    }
+  }
+
+  window.addEventListener('message', (event) => {
+    if (event.origin === 'https://giscus.app' && event.data.giscus?.isReady) {
+      syncGiscus();
+    }
+  });
+
+  const observer = new MutationObserver(() => syncGiscus());
+  observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+})();
+
