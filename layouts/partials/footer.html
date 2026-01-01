@@ -31,18 +31,37 @@
   </script>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const el = document.getElementById("page-views");
+    function updateViewCounts() {
+      const counters = document.querySelectorAll(".page-views");
 
-      if (el) {
-        const path = el.getAttribute("data-gc-path");
-        const url = `enochyu.goatcounter.com{encodeURIComponent(path)}.json?cb=${Date.now()}`;
+      counters.forEach(el => {
+        let path = el.getAttribute("data-gc-path");
+
+        if (!path) {
+          el.textContent = "0";
+          return;
+        }
+
+        path = path.replace(/\/$/, "");
+        const url = `https://enochyu.goatcounter.com/counter${path}.json`;
 
         fetch(url)
-          .then(r => r.ok ? r.json() : Promise.reject(r.status))
-          .then(d => { el.textContent = d.count; })
-          .catch(() => { el.textContent = "0"; });
-      }
-    });
+          .then(r => r.json())
+          .then(d => {
+            el.textContent = d.count || "0";
+          })
+
+          .catch(err => {
+            console.error("GoatCounter Error:", err);
+            el.textContent = "0";
+          });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateViewCounts);
+    } else {
+      updateViewCounts();
+    }
   </script>
 </footer>

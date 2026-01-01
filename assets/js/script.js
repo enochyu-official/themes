@@ -1,3 +1,14 @@
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+
+document.body.classList.add('dark-mode');
+  const icon = document.getElementById('theme-icon');
+
+  if (icon) {
+    icon.classList.replace('fa-moon', 'fa-sun');
+  }
+}
+
 function toggleTheme() {
   const body = document.body;
   const icon = document.getElementById('theme-icon');
