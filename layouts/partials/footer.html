@@ -41,18 +41,24 @@
           el.textContent = "0";
           return;
         }
-
         path = path.replace(/\/$/, "");
-        const url = `https://enochyu.goatcounter.com/counter${path}.json`;
+
+        const url = `https://enochyu.goatcounter.com/counter/blog${path}.json`;
 
         fetch(url)
-          .then(r => r.json())
+          .then(r => {
+            if (!r.ok) {
+              throw new Error(`HTTP ${r.status}`);
+            }
+            return r.json();
+          })
+
           .then(d => {
             el.textContent = d.count || "0";
           })
 
           .catch(err => {
-            console.error("GoatCounter Error:", err);
+            console.error("GoatCounter Error for path:", path, err);
             el.textContent = "0";
           });
       });
@@ -64,4 +70,15 @@
       updateViewCounts();
     }
   </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['\\[', '\\]'], ['$$', '$$']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
 </footer>
