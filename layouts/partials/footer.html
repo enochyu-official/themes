@@ -11,44 +11,16 @@
         integrity="sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ"></script>
 
   <script>
-    (function () {
-      fetch("https://enochyu.goatcounter.com/counter/TOTAL.json?cb=" + Date.now())
-        .then(r => {
-          if (!r.ok) throw new Error("HTTP " + r.status);
-          return r.json();
-        })
-
-        .then(d => {
-          const el = document.getElementById("gc-total-views");
-          if (el) el.textContent = d.count;
-        })
-
-        .catch(err => {
-          const el = document.getElementById("gc-total-views");
-
-          if (el) el.textContent = "ERR";
-          console.error("GoatCounter:", err); 
-        });
-    })();
-  </script>
-
-  <div>Number of visitors: <div id="stats"></div></div>
-
-  <script>
     let r = new XMLHttpRequest();
     r.addEventListener('load', function() {
-        document.querySelector('#stats').innerText = JSON.parse(this.responseText).count
+        document.querySelector('#gc-total-views').innerText = JSON.parse(this.responseText).count
     })
 
-    //let path = window.goatcounter.get_data()['p']
-    let path = location.pathname
+    let path = window.goatcounter.get_data()['p']
 
     r.open('GET', 'https://enochyu.goatcounter.com/counter/' + encodeURIComponent(path) + '.json')
     r.send()
   </script>
-
-
-  <!--
 
   <script>
     function updateViewCounts() {
@@ -87,8 +59,6 @@
       updateViewCounts();
     }
   </script>
-
-  -->
 
   <script>
     MathJax = {
