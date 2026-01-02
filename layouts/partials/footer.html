@@ -5,6 +5,14 @@
     </a>
   </div>
 
+  <script>
+    var t = setInterval(function() {
+      if (window.goatcounter && window.goatcounter.visit_count) {
+        clearInterval(t)
+        window.goatcounter.visit_count({append: 'body'})
+      }
+    }, 100)
+  </script>
   <script data-goatcounter="https://enochyu.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
 
@@ -30,17 +38,63 @@
     })();
   </script>
 
+  <div>Number of visitors: <div id="stats"></div></div>
+
   <script>
     let r = new XMLHttpRequest();
     r.addEventListener('load', function() {
-        document.querySelector('.page-views').innerText = JSON.parse(this.responseText).count
+        document.querySelector('#stats').innerText = JSON.parse(this.responseText).count
     })
 
-    let path = window.goatcounter.get_data()['p']
+    //let path = window.goatcounter.get_data()['p']
+    let path = location.pathname
 
     r.open('GET', 'https://enochyu.goatcounter.com/counter/' + encodeURIComponent(path) + '.json')
     r.send()
   </script>
+
+
+  <!--
+
+  <script>
+    function updateViewCounts() {
+      const counters = document.querySelectorAll(".page-views");
+
+      counters.forEach(el => {
+        let path = el.getAttribute("data-gc-path") || "";
+
+        path = path.replace(/^\/+|\/+$/g, "");
+
+        const gcPath = path === "" ? "/" : path;
+        const url = `https://enochyu.goatcounter.com/counter/${encodeURIComponent(gcPath)}.json`;
+
+        fetch(url)
+          .then(r => {
+            if (!r.ok) {
+              throw new Error(`HTTP ${r.status}`);
+            }
+            return r.json();
+          })
+
+          .then(d => {
+            el.textContent = d.count || "0";
+          })
+
+          .catch(err => {
+            console.error("GoatCounter Error for path:", path, err);
+            el.textContent = "0";
+          });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateViewCounts);
+    } else {
+      updateViewCounts();
+    }
+  </script>
+
+  -->
 
   <script>
     MathJax = {
