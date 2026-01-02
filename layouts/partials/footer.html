@@ -35,15 +35,12 @@
       const counters = document.querySelectorAll(".page-views");
 
       counters.forEach(el => {
-        let path = el.getAttribute("data-gc-path");
+        let path = el.getAttribute("data-gc-path") || "";
 
-        if (!path) {
-          el.textContent = "0";
-          return;
-        }
-        path = path.replace(/\/$/, "");
+        path = path.replace(/^\/+|\/+$/g, "");
 
-        const url = `https://enochyu.goatcounter.com/counter/${path}.json`;
+        const gcPath = path === "" ? "/" : path;
+        const url = `https://enochyu.goatcounter.com/counter/${encodeURIComponent(gcPath)}.json`;
 
         fetch(url)
           .then(r => {
