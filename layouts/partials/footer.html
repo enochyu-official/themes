@@ -9,7 +9,7 @@
     var t = setInterval(function() {
       if (window.goatcounter && window.goatcounter.visit_count) {
         clearInterval(t)
-        window.goatcounter.visit_count({append: 'body'})
+        window.goatcounter.visit_count({append: '#gc-totl-views'})
       }
     }, 100)
   </script>
@@ -17,25 +17,6 @@
         async src="//gc.zgo.at/count.v5.js"
         crossorigin="anonymous"
         integrity="sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ"></script>
-
-  <script>
-    window.goatcounter.visit_count({append: '#gc-total-views'});
-
-    document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => {
-        const path = window.location.pathname;
-        const url = `https://enochyugoatcounter.com/counter/${encodeURIComponent(path)}.json`;
-
-        fetch(url)
-          .then(response => response.json())
-          .then(data => {
-            const el = document.querySelector('#gc-total-views');
-            if (el) el.innerText = data.count;
-          })
-          .catch(err => console.error("GoatCounter fetch error:", err));
-      }, 500);
-    });
-  </script>
 
   <script>
     function updateViewCounts() {
