@@ -1,25 +1,4 @@
 <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="
-  default-src 'self' fonts.googleapis.com;
-  frame-src https://enochyu-blog.goatcounter.com/;
-  script-src 'self' https://gc.zgo.at https://cdn.jsdelivr.net
-    'sha256-90kULg8yn1wAANg+uBfZ5o9KPGO1q5pwsMvstKhGANs='
-    'sha256-XgtOOtoTHWJtx1l2NMZM9wYSA17RGyDH9uLEhpCVyzg='
-    'sha256-3A3HYB1QXEBTpXIvV44pWS8K17WT0lLZef2CGD50A9Y='
-    'sha256-5X9JG4ymfc88UBAvUoKveOSWN6dp+899r0dwyE/Yzx0='
-    'sha256-ADLLKx5HXyl0g6Z1EfG374z7NqOUXDtqA030dDkUUXw='
-    'sha256-MaA4xuuq1FR3yGLb6iWMIXf5M+fJp0uNM788sMuKA88=';
-  connect-src 'self' https://enochyu-blog.goatcounter.com https://cdn.jsdelivr.net;
-  style-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com
-    'sha256-PocLEq9dc+By4pgaHXWIj7IsN/wqxay+lW05QpBQi3k='
-    'sha256-3ZSLWaOQtqrQ6iNoyQlBEIKBi4iPfnn6qanv5SmcYbg='
-    'sha256-bgFI+8WNpZyQTg52T+OSNh5Vbm0kkPnj/kOliAUyReE='
-    'sha256-khzm1f0RgYGW/mmWtJrCL6sPH/UAtSpOwXMy3ZMP/7g='
-    'sha256-1vpkuyno8q93JaTq08t8TmhBkkzmlLq7oQUIJpOeDIQ=';
-  worker-src 'self' blob:;
-  font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com https://gc.zgo.at static.zgo.at data:;
-  img-src 'self' data:;
-">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <meta name="author" content="{{ .Site.Params.author }}">
