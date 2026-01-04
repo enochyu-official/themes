@@ -7,18 +7,19 @@
     {{ end }}
   </div>
 
-  <div class="articles-section">
-    {{ range .Site.RegularPages.GroupByDate "2006" }}
+  <div class="articles-section">    
+    {{ range (where .Site.RegularPages "Section" "posts").GroupByDate "2006" }}
+    {{ if ne .Key "0001" }}
     <div class="year-group mb-5">
       <h2 class="year-heading mb-4">{{ .Key }}</h2>
       <div class="row">
         {{ range .Pages }}
-        {{ partial "article-card.html" . }}
+        {{ partial "archives-card.html" . }}
         {{ end }}
       </div>
     </div>
     {{ end }}
+    {{ end }}
   </div>
 </div>
 {{ end }}
-
