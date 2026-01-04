@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="container">
+  <div class="page-header glass p-4 mb-4">
+    <h1>{{ .Title }}</h1>
+    {{ if .Description }}
+    <p class="lead">{{ .Description }}</p>
+    {{ end }}
+  </div>
+
+  <div class="articles-section">
+    {{ range .Pages.GroupByDate "2006" }}
+    <div class="year-group mb-5">
+      <h2 class="year-heading mb-4">{{ .Key }}</h2>
+      <div class="row">
+        {{ range .Pages }}
+        {{ partial "article-card.html" . }}
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
