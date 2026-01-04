@@ -8,7 +8,7 @@
   </div>
 
   <div class="articles-section">
-    {{ range .Pages.GroupByDate "2006" }}
+    {{ range .Site.RegularPages.GroupByDate "2006" }}
     <div class="year-group mb-5">
       <h2 class="year-heading mb-4">{{ .Key }}</h2>
       <div class="row">
@@ -21,3 +21,4 @@
   </div>
 </div>
 {{ end }}
+
