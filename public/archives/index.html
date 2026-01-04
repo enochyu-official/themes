@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Collection of all posts by year">
+<meta name="author" content="Enoch Yu">
+<title>Archives | My Blog</title>
+
+<link href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+
+<link rel="stylesheet" href="/css/bundle.min.d580d8bf33510ccb17514b1f847d75162250ebf6cf530690addf4e057b9fb50e.css" integrity="sha256-1YDYvzNRDMsXUUsfhH11FiJQ6/bPUwaQrd9OBXuftQ4=">
+
+<link rel="icon" href="/favicon.ico">
+
+</head>
+<body>
+  <header>
+  <nav class="navbar navbar-expand-lg glass">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="http://localhost:1313/">My Blog</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          
+
+          <li class="nav-item">
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+              <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+
+  
+  <main>
+    
+<div class="container">
+  <div class="page-header glass p-4 mb-4">
+    <h1>Archives</h1>
+    
+    <p class="lead">Collection of all posts by year</p>
+    
+  </div>
+
+  <div class="articles-section">
+    
+  </div>
+</div>
+
+  </main>
+  
+  <footer class="mt-5 py-4 text-center">
+  <div class="container">
+    <a class="mb-0" href="https://github.com/enochyu-official" target="_blank" rel="noopener noreferrer">
+      &copy; 2026 Enoch Yu. All Rights Reserved.
+    </a>
+  </div>
+
+  <script>
+    var t = setInterval(function() {
+      if (window.goatcounter && window.goatcounter.visit_count) {
+        clearInterval(t)
+        window.goatcounter.visit_count({append: '#gc-total-views'})
+      }
+    }, 100)
+  </script>
+  <script data-goatcounter="https://enochyu-blog.goatcounter.com/count"
+          async src="https://gc.zgo.at/count.v5.js"
+          crossorigin="anonymous"
+          integrity="sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ"></script>
+
+  <script>
+    function updateViewCounts() {
+      const counters = document.querySelectorAll(".page-views");
+
+      counters.forEach(el => {
+        let path = el.getAttribute("data-gc-path") || "";
+
+        path = path.replace(/^\/+|\/+$/g, "");
+
+        const gcPath = path === "" ? "/" : path;
+        const url = `https://enochyu-blog.goatcounter.com/counter/${encodeURIComponent(gcPath)}.json`;
+
+        fetch(url)
+          .then(r => {
+            if (!r.ok) {
+              throw new Error(`HTTP ${r.status}`);
+            }
+            return r.json();
+          })
+
+          .then(d => {
+            el.textContent = d.count || "0";
+          })
+
+          .catch(err => {
+            console.error("GoatCounter Error for path:", path, err);
+            el.textContent = "0";
+          });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateViewCounts);
+    } else {
+      updateViewCounts();
+    }
+  </script>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['\\[', '\\]'], ['$$', '$$']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
+</footer>
+
+  
+  
+  
+  <script src="/js/script.js"></script>
+  
+  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
