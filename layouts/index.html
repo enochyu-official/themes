@@ -6,7 +6,7 @@
   <div class="articles-section">
     <h2 class="section-title">Latest Posts</h2>
     <div class="row">
-      {{ range first 10 (where .Site.RegularPages "Type" "posts") }}
+      {{ range first 7 (where .Site.RegularPages "Type" "posts") }}
       {{ partial "article-card.html" . }}
       {{ end }}
     </div>
