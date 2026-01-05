@@ -1,7 +1,7 @@
 function initializeTheme() {
   const body = document.body;
   const icon = document.getElementById('theme-icon');
-  const savedTheme = localStorage.getItem('theme') || 'light';
+  const savedTheme = localStorage.getItem('theme') || 'dark';
   
   if (savedTheme === 'dark') {
     body.classList.add('dark-mode');

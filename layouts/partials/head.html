@@ -4,6 +4,13 @@
 <meta name="author" content="{{ .Site.Params.author }}">
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
 
+<script>
+  if (localStorage.getItem('theme') === 'light') {
+  } else {
+    document.documentElement.classList.add('dark-mode');
+  }
+</script>
+
 <link href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
