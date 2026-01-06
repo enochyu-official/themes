@@ -6,7 +6,7 @@ title = 'My Blog'
   author = "Enoch Yu"
   avatar = "/images/avatar.png"
   mainSections = ["posts"]
-  favicon = "favicon.ico"
+  favicon = "/favicon.ico"
   math = true
 
 [params.social]
