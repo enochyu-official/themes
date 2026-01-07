@@ -26,6 +26,7 @@ body {
   min-height: 100vh;
   transition: all 0.3s ease;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 body.dark-mode {
