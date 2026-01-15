@@ -1,6 +1,6 @@
 name = "EnochBlogTheme"
 license = "MIT"
-licenselink = "https://github.com/enochyu-official/EnochBlogTheme/blob/master/LICENSE"
+licenselink = "https://github.com/enochyu-official/EnochBlogTheme/blob/main/LICENSE"
 description = "A Hugo blog theme with glassmorphism and Bootstrap"
 homepage = "https://github.com/enochyu-official/EnochBlogTheme"
 demosite = "https://enochyu-blog.pages.dev/"
