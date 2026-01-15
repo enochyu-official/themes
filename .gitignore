@@ -15,6 +15,7 @@ logs/
 htmlcov/
 
 google7dae713ba1dc289d.html
+.hugo_build.lock
 .DS_Store
 
 /resources/_gen
