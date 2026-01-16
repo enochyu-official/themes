@@ -2,7 +2,7 @@
 
 To implement the theme, please run the following command in your project root.
 ```
-git submodule add https://github.com/enochyu-official/EnochBlogTheme/ themes/EnochBlogTheme
+git submodule add https://github.com/enochyu-official/themes/EnochBlogTheme/ themes/EnochBlogTheme
 git submodule update --init --recursive
 ```
 
