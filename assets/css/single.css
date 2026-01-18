@@ -17,7 +17,7 @@
 }
 
 body.dark-mode .post-title {
-  color: #E9DCC9;
+  color: #EDEADE;
 }
 
 .post-meta {
@@ -55,7 +55,7 @@ body.dark-mode .post-meta {
 }
 
 body.dark-mode .post-body h2 {
-  color: #FFDEAD;
+  color: #F9F6EE;
 }
 
 .post-body h3 {
@@ -67,7 +67,7 @@ body.dark-mode .post-body h2 {
 }
 
 body.dark-mode .post-body h3 {
-  color: #FCF5E5;
+  color: #D3D3D3;
 }
 
 .post-body p {
