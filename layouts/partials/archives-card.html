@@ -12,14 +12,20 @@
       <span class="mx-2">|</span>
       <i class="fas fa-folder"></i> 
       {{ range first 1 . }}
-        <a href="{{ "categories" | relURL }}/{{ . | urlize }}/">{{ . }}</a>
+      <a href="{{ "categories" | relURL }}/{{ . | urlize }}/">{{ . }}</a>
+      {{ end }}
+      {{ end }}
+
+      {{ with .Params.tags }}
+      <span class="mx-2">|</span>
+      <i class="fas fa-tags"></i>
+      {{ range first 2 . }}
+      <a href="{{ "tags" | relURL }}/{{ . | urlize }}/" class="meta-tag-link">#{{ . }}</a>
       {{ end }}
       {{ end }}
     </div>
 
     <a href="{{ .Permalink }}" class="article-title d-block">{{ .Title }}</a>
 
-    </div>
+  </div>
 </div>
-
-

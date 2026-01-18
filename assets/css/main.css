@@ -1,6 +1,6 @@
 :root {
-  --bg-light: linear-gradient(135deg, #EBF4F5 0%, #B5C6E0 100%);
-  --bg-dark: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  --bg-light: linear-gradient(135deg, #F9F8F6 0%, #EFE9E3 100%);
+  --bg-dark: linear-gradient(135deg, #37353E 0%, #44444E 100%);
   --glass-light: rgba(255, 255, 255, 0.15);
   --glass-dark: rgba(0, 0, 0, 0.3);
   --text-light: #333;
@@ -38,7 +38,7 @@ body.dark-mode {
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--border-light);
   border-radius: 16px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  box-shadow: 0 8px 32px 0 rgba(54, 69, 79, 0.37);
 }
 
 body.dark-mode .glass {

@@ -15,7 +15,7 @@
   .toc-sidebar {
     width: 280px;
     position: sticky;
-    top: 100px;
+    top: 30px;
     height: fit-content;
     max-height: calc(100vh - 120px);
     margin-bottom: 0;

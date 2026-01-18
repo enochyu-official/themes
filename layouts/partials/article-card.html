@@ -12,27 +12,28 @@
       <span class="mx-2">|</span>
       <i class="fas fa-folder"></i> 
       {{ range first 1 . }}
-        <a href="{{ "categories" | relURL }}/{{ . | urlize }}/">{{ . }}</a>
+      <a href="{{ "categories" | relURL }}/{{ . | urlize }}/">{{ . }}</a>
+      {{ end }}
+      {{ end }}
+
+      {{ with .Params.tags }}
+      <span class="mx-2">|</span>
+      <i class="fas fa-tags"></i>
+      {{ range first 2 . }}
+      <a href="{{ "tags" | relURL }}/{{ . | urlize }}/" class="meta-tag-link">#{{ . }}</a>
       {{ end }}
       {{ end }}
     </div>
 
     <a href="{{ .Permalink }}" class="article-title d-block">{{ .Title }}</a>
-      <p class="article-excerpt">
-        {{ if .Description }}
-          {{ .Description }}
-        {{ else }}
-          {{ .Summary }}
-        {{ end }}
-      </p>
 
-      {{ with .Params.tags }}
-      <div class="article-tags">
-        {{ range . }}
-        <a href="{{ "tags" | relURL }}/{{ . | urlize }}/" class="tag">{{ . }}</a>
-        {{ end }}
-      </div>
-      {{ end }}
+    <div class="excerpt-wrapper">
+      <p class="article-excerpt">
+        {{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}
+      </p>
+    </div>
+
+    <a href="{{ .Permalink }}" class="btn-read-more">READ MORE</a>
   </div>
 </div>
 
