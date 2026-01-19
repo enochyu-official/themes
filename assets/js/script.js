@@ -18,7 +18,7 @@ function applyTheme(theme) {
 }
 
 function initializeTheme() {
-  const savedTheme = localStorage.getItem('theme') || 'light';
+  const savedTheme = localStorage.getItem('theme') || 'dark';
   applyTheme(savedTheme);
 
   setTimeout(syncGiscusTheme, 100);
