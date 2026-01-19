@@ -1,38 +1,33 @@
-function initializeTheme() {
+function applyTheme(theme) {
   const body = document.body;
   const icon = document.getElementById('theme-icon');
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  
-  if (savedTheme === 'dark') {
-    body.classList.add('dark-mode');
-    if (icon) {
-      icon.classList.remove('fa-moon');
-      icon.classList.add('fa-sun');
-    }
+  const navbar = document.getElementById('mainNavbar');
+
+  const isDark = theme === 'dark';
+  body.classList.toggle('dark-mode', isDark);
+
+  if (navbar) navbar.setAttribute('data-bs-theme', isDark ? 'dark' : 'light');
+
+  if (icon) {
+    icon.classList.toggle('fa-sun', isDark);
+    icon.classList.toggle('fa-moon', !isDark);
   }
-  
+
+  localStorage.setItem('theme', theme);
+  syncGiscusTheme();
+}
+
+function initializeTheme() {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  applyTheme(savedTheme);
+
   setTimeout(syncGiscusTheme, 100);
 }
 
 function toggleTheme() {
-  const body = document.body;
-  const icon = document.getElementById('theme-icon');
-  
-  body.classList.toggle('dark-mode');
-  
-  if (body.classList.contains('dark-mode')) {
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    icon.classList.remove('fa-sun');
-    icon.classList.add('fa-moon');
-    localStorage.setItem('theme', 'light');
-  }
-  
-  syncGiscusTheme();
+  const isDark = document.body.classList.contains('dark-mode');
+  applyTheme(isDark ? 'light' : 'dark');
 }
-
 
 const GISCUS_ORIGIN = 'https://giscus.app';
 
