@@ -7,4 +7,6 @@ git submodule update --init --recursive
 ```
 
 ## License
-The theme is distributed under the MIT license. The theme also utilize Bootstrap for better responsiveness and functions. Please feel free to utilize the theme without limitations!!
+The theme is distributed under the MIT license. The theme also utilize Bootstrap
+for better responsiveness and functions. Please feel free to utilize the theme
+without limitations!!
