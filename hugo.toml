@@ -10,10 +10,10 @@ title = 'My Blog'
   math = true
 
 [params.social]
+  website = "example.com"
   github = "github.com"
   youtube = "youtube.com"
   linkedin = "linkedin.com"
-  email = "your@email.com"
 
 [params.comments]
   enabled = true

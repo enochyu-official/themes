@@ -5,15 +5,14 @@
   <p class="profile-description">{{ .Site.Params.description }}</p>
 
   <div class="social-icons">
+    {{ with .Site.Params.social.website }}
+    <a href="{{ . }}" target="_blank" rel="noopener" aria-label="Personal Website">
+      <i class="fas fa-user"></i>
+    </a>
+
     {{ with .Site.Params.social.youtube }}
     <a href="{{ . }}" target="_blank" rel="noopener" aria-label="Youtube">
       <i class="fab fa-youtube"></i>
-    </a>
-    {{ end }}
-
-    {{ with .Site.Params.social.github }}
-    <a href="{{ . }}" target="_blank" rel="noopener" aria-label="GitHub">
-      <i class="fab fa-github"></i>
     </a>
     {{ end }}
 
@@ -23,9 +22,9 @@
     </a>
     {{ end }}
 
-    {{ with .Site.Params.social.email }}
-    <a href="{{ . }}" aria-label="Email">
-      <i class="fas fa-envelope"></i>
+    {{ with .Site.Params.social.github }}
+    <a href="{{ . }}" target="_blank" rel="noopener" aria-label="GitHub">
+      <i class="fab fa-github"></i>
     </a>
     {{ end }}
   </div>
