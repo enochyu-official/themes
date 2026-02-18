@@ -1,34 +1,46 @@
 .stats-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+  width: 65vw;
+  gap: 1rem;
+  margin: 0 auto;
   margin-bottom: 40px;
 }
 
-.stat-card {
+.stats-card {
   padding: 25px;
   text-align: left;
-  height: 100%;
-  transition: transform 0.3s;
+  width: 100%;
+  height: 250px;
+  border-radius: 16px;
+  border-left: 2.5px solid var(--accent-color1);
+  border-right: 2.5px solid var(--accent-color1);
 }
 
-.stat-card:hover {
-  transform: translateY(-5px);
-}
-
-.stat-title {
-  font-size: 14px;
+.stats-title {
+  color: var(--accent-color1);
+  font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 1px;
   opacity: 0.8;
   margin-bottom: 15px;
 }
 
-.stat-items {
+.stats-content {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
-.stat-badge {
+.stats-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats-badge {
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 14px;
@@ -39,28 +51,28 @@
   color: inherit;
 }
 
-.stat-badge:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.05);
+.stats-badge:hover {
+  background-color: color-mix(in srgb, var(--accent-color1) 30%, transparent);
   color: inherit;
 }
 
-body.dark-mode .stat-badge {
-  background: rgba(54, 69, 79, 0.3);
-}
-
-body.dark-mode .stat-badge:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.stat-number {
+.stats-number {
   font-size: 21px;
   font-weight: bold;
 }
 
-.stat-label {
+.stats-label {
   font-size: 14px;
   font-weight: bold;
   opacity: 0.8;
 }
+
+@media (max-width: 1023px) {
+  .stats-section {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 80vw;
+  }
+}
+
 

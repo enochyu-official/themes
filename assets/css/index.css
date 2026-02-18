@@ -1,0 +1,26 @@
+.index-article-container {
+  display: flex;
+  flex-direction: column;
+  width: 65vw;
+  height: auto;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.index-article-content {
+  margin-bottom: 40px;
+}
+
+.index-article-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-left: 7px;
+}
+
+@media (max-width: 1023px) {
+  .index-article-container {
+    width: 80vw;
+  }
+}
+

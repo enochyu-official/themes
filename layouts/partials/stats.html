@@ -3,61 +3,52 @@
   {{ $.Scratch.Add "totalWords" .WordCount }}
 {{ end }}
 
-<div class="stats-section">
-  <div class="row g-3">
-
-    <div class="col-md-4">
-      <div class="stat-card glass">
-        <div class="stat-title">Categories</div>
-        <div class="p-2">
-          {{ range .Site.Taxonomies.categories.ByCount }}
-          <div class="d-flex justify-content-between align-items-center mb-1">
-            <a href="{{ .Page.Permalink }}" class="stat-badge">{{ .Page.Title }}</a>
-            <span class="stat-badge">{{ .Count }}</span>
-          </div>
-          {{ end }}
-        </div>
+<section class="stats-section">
+  <div class="stats-card">
+    <div class="stats-title">Categories</div>
+    <div class="stats-content">
+      {{ range .Site.Taxonomies.categories.ByCount }}
+      <div class="stats-item">
+        <a href="{{ .Page.Permalink }}" class="stats-badge">{{ .Page.Title }}</a>
+        <span>{{ .Count }}</span>
       </div>
+      {{ end }}
     </div>
-
-    <div class="col-md-4">
-      <div class="stat-card glass">
-        <div class="stat-title">Tags</div>
-        <div class="p-2">
-          {{ range .Site.Taxonomies.tags.ByCount }} 
-          <div class="d-flex justify-content-between align-items-center mb-1">
-            <a href="{{ .Page.Permalink }}" class="stat-badge">{{ .Page.Title }}</a>
-            <span class="stat-badge">{{ .Count }}</span>
-          </div>
-          {{ end }} 
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="stat-card glass">
-        <div class="stat-title">Statistics</div>
-        <div class="p-2"> 
-          <div class="d-flex justify-content-between align-items-center p-2 border-bottom">
-            <div class="stat-label">Words</div>
-            <div class="stat-number">{{ .Scratch.Get "totalWords" }}</div>
-          </div>
-
-          <div class="d-flex justify-content-between align-items-center p-2 border-bottom">
-            <div class="stat-label">Posts</div>
-            <div class="stat-number">
-              {{ len (where .Site.RegularPages "Section" "posts") }}
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-between align-items-center p-2">
-            <div class="stat-label">Total Visits</div>
-            <div class="stat-number count" id="gc-total-views"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
-</div>
+
+  <div class="stats-card">
+    <div class="stats-title">Tags</div>
+    <div class="stats-content">
+      {{ range .Site.Taxonomies.tags.ByCount }} 
+      <div class="stats-item">
+        <a href="{{ .Page.Permalink }}" class="stats-badge">{{ .Page.Title }}</a>
+        <span>{{ .Count }}</span>
+      </div>
+      {{ end }} 
+    </div>
+  </div>
+
+  <div class="stats-card">
+    <div class="stats-title">Statistics</div>
+    <div class="stats-content"> 
+      <div class="stats-item" style="border-bottom:1px solid var(--accent-color1)">
+        <div class="stats-label">Words</div>
+        <div class="stats-number">{{ .Scratch.Get "totalWords" }}</div>
+      </div>
+
+      <div class="stats-item" style="border-bottom:1px solid var(--accent-color1)">
+        <div class="stats-label">Posts</div>
+        <div class="stats-number">
+          {{ len (where .Site.RegularPages "Section" "posts") }}
+        </div>
+      </div>
+
+      <div class="stats-item">
+        <div class="stats-label">Total Visits</div>
+        <div class="stats-number count" id="gc-total-views"></div>
+      </div>
+    </div>
+  </div>
+
+</section>
 

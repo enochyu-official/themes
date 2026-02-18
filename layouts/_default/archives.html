@@ -1,25 +1,44 @@
 {{ define "main" }}
-<div class="container">
-  <div class="page-header glass p-4 mb-4">
-    <h1>{{ .Title }}</h1>
-    {{ if .Description }}
-    <p class="lead">{{ .Description }}</p>
-    {{ end }}
-  </div>
-
-  <div class="articles-section">    
-    {{ range (where .Site.RegularPages "Section" "posts").GroupByDate "2006" }}
-    {{ if ne .Key "0001" }}
-    <div class="year-group mb-5">
-      <h2 class="year-heading mb-4">{{ .Key }}</h2>
-      <div class="row">
-        {{ range .Pages }}
-        {{ partial "archives-card.html" . }}
-        {{ end }}
-      </div>
-    </div>
-    {{ end }}
-    {{ end }}
-  </div>
+<div class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{ if .Description }}
+  <p>{{ .Description }}</p>
+  {{ end }}
 </div>
+<section id="archives">
+  <div id="archives-content">
+    <div>
+      {{ range (where .Site.RegularPages "Section" "posts").GroupByDate "2006" }}
+      {{ if ne .Key "0001" }}
+      <div>
+        <h2 class="year" id="year-{{ .Key }}">YEAR {{ .Key }}</h2>
+        <div>
+          {{ range .Pages }}
+          {{ partial "archives-card.html" . }}
+          {{ end }}
+        </div>
+        <br>
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+  <div>
+    <aside class="toc-sidebar" id="archives-toc" style="margin-top:1.3rem;">
+      <div class="toc">
+        <div class="toc-title">Table of Contents</div>
+        <nav>
+          <ul>
+          {{ range (where .Site.RegularPages "Section" "posts").GroupByDate "2006" }}
+            {{ if ne .Key "0001" }}
+              <li><a href="#year-{{ .Key }}">YEAR {{ .Key }}</a></li>
+            {{ end }}
+          {{ end }}
+          </ul>
+        </nav>
+      </div>
+    </aside> 
+  </div> 
+</section>
 {{ end }}
+

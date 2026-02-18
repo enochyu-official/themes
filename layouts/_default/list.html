@@ -1,19 +1,15 @@
 {{ define "main" }}
-<div class="container">
-  <div class="page-header glass p-4 mb-4">
-    <h1>{{ .Title }}</h1>
-      {{ if .Description }}
-      <p class="lead">{{ .Description }}</p>
-      {{ end }}
-  </div>
-    
-  <div class="articles-section">
-    <div class="row">
-      {{ range .Pages }}
-      {{ partial "article-card.html" . }}
-      {{ end }}
-    </div>
-  </div>
+<div class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{ if .Description }}
+  <p>{{ .Description }}</p>
+  {{ end }}
+</div>
+<div id="list-content">
+  {{ range .Pages }}
+  {{ partial "archives-card.html" . }}
+  {{ end }}
 </div>
 {{ end }}
+
 

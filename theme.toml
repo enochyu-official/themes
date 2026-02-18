@@ -1,17 +1,15 @@
 name = "EnochBlogTheme"
 license = "MIT"
 licenselink = "https://github.com/enochyu-official/EnochBlogTheme/blob/main/LICENSE"
-description = "A Hugo blog theme with glassmorphism and Bootstrap"
+description = "Simple and elegant Hugo blog theme."
 homepage = "https://github.com/enochyu-official/EnochBlogTheme"
 demosite = "https://blog.enochyu.com/"
 
-tags = ["blog", "glassmorphism", "bootstrap", "responsive", "minimal" ]
+tags = ["blog", "elegant", "responsive", "minimal" ]
 features = [
-    "widgets",
     "sidebar",
     "toc",
     "giscus",
-    "darkmode",
     "search",
 ]
 
