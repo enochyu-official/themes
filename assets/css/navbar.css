@@ -113,6 +113,7 @@
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
     gap: 0;
     padding: 2rem 0;
+    z-index: 999;
   }
   
   .nav-menu.active {
